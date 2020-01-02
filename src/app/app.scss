@@ -1,0 +1,76 @@
+@import "~bulma";
+@import './../app/common/common.scss';
+
+.nav-tag {
+  padding-right: 30px;
+}
+
+.tag-notif {
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  margin-left: 10px;
+
+  @media (max-width: 768px) {
+    margin-left: -2px;
+  }
+}
+
+.breadcrumb:not(:last-child) {
+  margin-bottom: 0;
+}
+
+body {
+  color: $text;
+  background-color: $body-background;
+}
+
+// main area
+.main {
+  padding: 2em 1.25em 2em 0;
+  color: $text;
+}
+
+.is-wrapped {
+  background-color: $wrapper-background;
+}
+
+.box.is-paddingless {
+  padding: 1em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.title {
+  color: $text;
+}
+
+a {
+  color: $link !important;
+
+  .is-active {
+    color: $link !important;
+  }
+
+  &:hover {
+    color: $text !important;
+  }
+}
+
+.tabs a {
+  color: $text;
+}
+
+.block {
+  margin-top: .5em;
+}
+
+.select-label {
+  font-weight: 700;
+  vertical-align: super;
+  padding-right: 0.75em;
+}
+
+input, .textarea, .select select {
+  background-color: $input;
+  color: $text;
+}
