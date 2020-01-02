@@ -1,0 +1,10 @@
+<div class="columns" ng-if="!$ctrl.showForm">
+  <div class="column">
+    <button class="button is-primary" type="button" ng-click="$ctrl.showForm=true">
+      <span class="icon is-small"><i class="fa fa-plus"></i></span>&nbsp;New Wish
+    </button>
+  </div>
+</div>
+
+<wish-form ng-if="$ctrl.showForm" show-form="$ctrl.showForm"></wish-form>
+<wish-list ng-if="!$ctrl.showForm"></wish-list>
