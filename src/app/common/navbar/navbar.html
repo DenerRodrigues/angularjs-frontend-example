@@ -1,0 +1,44 @@
+<header class="hero">
+  <div class="hero-head">
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item is-brand">
+          <img class="navbar-brand-logo" src="logo.png" alt="App">
+        </a>
+
+        <button class="button navbar-burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="navbar-menu navbar-end" id="navMenu">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <figure class="image is-32x32" style="margin-right:.5em;">
+              <img src="https://avatars1.githubusercontent.com/u/7221389?v=4&s=32">
+            </figure>
+            Account
+          </a>
+
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-user-o"></i>
+                  </span>
+              &nbsp; Profile
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" ng-click="$ctrl.logout()">
+              <span class="icon is-small">
+                <i class="fa fa-power-off"></i>
+              </span>
+              &nbsp; Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

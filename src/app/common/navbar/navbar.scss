@@ -1,0 +1,77 @@
+@import './../common.scss';
+
+.navbar {
+  background-color: $navbar-background !important;
+
+  &-item {
+    background-color: $navbar-background;
+    color: $navbar-text !important;
+
+    &.is-active {
+      background-color: $selected !important;
+      color: #3273dc !important;
+    }
+
+    &:hover {
+      background-color: $selected !important;
+      color: $navbar-text !important;
+    }
+  }
+
+  .is-brand {
+    &:hover {
+      background-color: $navbar-background !important;
+    }
+  }
+
+  &-brand-logo {
+    max-height: 3rem !important;
+    background-color: $navbar-background;
+    border-radius: .25em;
+    padding: .25em;
+  }
+
+  &-burger {
+    background-color: $navbar-background !important;
+    border: 0;
+
+    span {
+      background-color: $menu-title;
+    }
+  }
+
+  &-link {
+    color: $navbar-text;
+
+    figure {
+      img {
+        border-radius: 50%;
+        max-height: 2em;
+      }
+    }
+
+    &:hover {
+      background-color: $navbar-background;
+    }
+  }
+
+
+  .navbar-link {
+    background-color: $navbar-background !important;
+    color: $navbar-text !important;
+
+    &:hover {
+      background-color: $selected !important;
+      color: $navbar-text !important;
+    }
+  }
+
+  .navbar-dropdown {
+    background-color: $navbar-background !important;
+    color: $navbar-text !important;
+  }
+}
+
+
+
+
