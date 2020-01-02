@@ -1,0 +1,17 @@
+node_modules/
+src/app/lib/**
+
+# test files
+src/app/**/**/*.spec.js
+src/app/**/**/**/*.spec.js
+src/app/**/**/**/**/*.spec.js
+
+# bundlers
+spec.bundle.js
+
+# webpack files
+webpack.config.js
+webpack.dev.config.js
+webpack.dist.config.js
+
+gulpfile.*
