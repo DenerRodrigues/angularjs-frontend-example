@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+      <div class="field is-size-3 has-text-centered">
+        Sign in to App
+      </div>
+      <form class="box" ng-submit="$ctrl.login()">
+        <div class="field">
+          <label for="" class="label">E-mail</label>
+          <div class="control has-icons-left">
+            <input type="email" placeholder="your@email.com" class="input" ng-model="$ctrl.email" required>
+            <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="" class="label">Password</label>
+          <div class="control has-icons-left">
+            <input type="password" placeholder="*******" class="input" ng-model="$ctrl.password" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <button class="button is-small is-fullwidth is-success">
+            <i class="fa fa-sign-in"></i>&nbsp;<strong>Sign In</strong>
+          </button>
+        </div>
+        <div class="field" ng-if="$ctrl.message">
+          <div class="notification {{ $ctrl.message.type }}">
+            <span translate>{{ $ctrl.message.text }}</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+      <div class="box is-paddingless is-wrapped has-text-centered">
+        New user?&nbsp;<a>Create an account.</a>
+      </div>
+    </div>
+  </div>
+</div>
