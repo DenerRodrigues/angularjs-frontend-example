@@ -13,3 +13,4 @@ __pycache__/
 .env
 double-expend
 .just-force-new-version
+package-lock.json
