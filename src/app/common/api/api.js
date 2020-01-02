@@ -1,5 +1,6 @@
 import angular from 'angular';
 import restangular from 'restangular';
+import Environment from './../environment';
 
 function localStorageToken() {
   // eslint-disable-next-line no-undef
@@ -8,13 +9,14 @@ function localStorageToken() {
 
 export default angular.module('module.api', [
   restangular,
+  Environment,
 ])
-  .config((RestangularProvider) => {
+  .config((RestangularProvider, envServiceProvider) => {
     'ngInject';
 
     const authorization = `Basic ${localStorageToken()}`;
     RestangularProvider.setDefaultHeaders({ Authorization: authorization });
-    RestangularProvider.setBaseUrl('http://127.0.0.1:5000');
+    RestangularProvider.setBaseUrl(envServiceProvider.read('apiUrl'));
     RestangularProvider.setRequestInterceptor((elem, operation) => {
       if (operation === 'remove') {
         return undefined;
