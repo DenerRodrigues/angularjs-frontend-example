@@ -1,0 +1,15 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+dist/
+.idea
+coverage/
+.python-version
+__pycache__/
+*.pyc
+.env
+double-expend
+.just-force-new-version
