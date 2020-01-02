@@ -1,0 +1,31 @@
+@import './../common.scss';
+
+.aside {
+  min-height: calc(100vh - 8em);
+
+  background-color: $sidebar-background;
+  padding: 2em .2em 0 1em;
+
+  .menu-label {
+    color: $menu-title;
+    margin-left: .5em;
+  }
+
+  .menu-list {
+    li {
+      margin-top: .5em;
+    }
+
+    a {
+      color: #b3b3b3 !important;
+      &.is-active {
+        background-color: $selected;
+        color: #3273dc !important;
+      }
+      &:hover {
+        background-color: $selected;
+        color: $text !important;
+      }
+    }
+  }
+}
