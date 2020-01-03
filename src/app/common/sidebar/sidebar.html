@@ -5,7 +5,8 @@
     </p>
     <ul class="menu-list">
       <li>
-        <a class="is-active" href="#" usref="authenticated.dashboard">
+        <a ng-class="{'is-active': $ctrl.stateName === 'authenticated.dashboard'}"
+           href="#" ui-sref="authenticated.dashboard">
           <span class="icon is-small"><i class="fa fa-home"></i></span>&nbsp;Dashboard
         </a>
       </li>
@@ -20,7 +21,7 @@
         </a>
       </li>
       <li>
-        <a target="_blank" href="http://localhost:5000/docs">
+        <a target="_blank" href="{{ $ctrl.apiUrl }}/docs">
           <span class="icon is-small"><i class="fa fa-code"></i></span>&nbsp;API
         </a>
       </li>

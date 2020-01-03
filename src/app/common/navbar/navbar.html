@@ -2,39 +2,45 @@
   <div class="hero-head">
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item is-brand">
-          <img class="navbar-brand-logo" src="logo.png" alt="App">
+        <a class="navbar-item is-brand" ui-sref="authenticated.dashboard">
+          <img class="navbar-brand-logo" src="https://www.alura.com.br/assets/api/cursos/512/angularjs-mvc.png" alt="App">
         </a>
 
-        <button class="button navbar-burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          ng-click="$ctrl.burgerMenu = !!!$ctrl.burgerMenu"
+          ng-class="{'is-active': $ctrl.burgerMenu}"
+          aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
-      <div class="navbar-menu navbar-end" id="navMenu">
+      <div class="navbar-menu navbar-end " id="navMenu"  ng-class="{'is-active': $ctrl.burgerMenu}">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            <figure class="image is-32x32" style="margin-right:.5em;">
-              <img src="https://avatars1.githubusercontent.com/u/7221389?v=4&s=32">
-            </figure>
-            Account
+            <span class="icon">
+                <i class="fa fa-user"></i>
+            </span>
+            &nbsp;Account
           </a>
 
           <div class="navbar-dropdown is-right">
-            <a class="navbar-item">
-                  <span class="icon is-small">
-                    <i class="fa fa-user-o"></i>
-                  </span>
-              &nbsp; Profile
+            <a class="navbar-item" ui-sref="authenticated.profile">
+              <span class="icon is-small">
+                <i class="fa fa-user-o"></i>
+              </span>
+              &nbsp;Profile
             </a>
             <hr class="navbar-divider">
             <a class="navbar-item" ng-click="$ctrl.logout()">
               <span class="icon is-small">
                 <i class="fa fa-power-off"></i>
               </span>
-              &nbsp; Logout
+              &nbsp;Logout
             </a>
           </div>
         </div>

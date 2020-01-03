@@ -4,7 +4,7 @@ import uiRouter from '@uirouter/angularjs';
 import loginComponent from './login.component';
 import LoginService from './login.service';
 
-const loginModule = angular.module('login', [
+const loginModule = angular.module('guest.login', [
   uiRouter,
 ])
   .config(($stateProvider) => {

@@ -17,6 +17,7 @@ class LoginController {
     this.LoginService.signIn(this.email, this.password).then(() => {
       this.$state.go('authenticated.dashboard');
     }, () => {
+      this.AuthTokenService.revokeToken();
       this.message = {
         type: 'is-danger',
         text: 'E-mail or Password Error',
