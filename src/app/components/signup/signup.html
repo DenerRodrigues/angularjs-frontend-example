@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="has-text-centered">
+    <img src="https://www.alura.com.br/assets/api/cursos/512/angularjs-mvc.png" alt="App" width="56px">
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+      <div class="field is-size-3 has-text-centered">
+        Sign up to App
+      </div>
+      <form class="box" ng-submit="$ctrl.signup()">
+        <div class="field">
+          <label class="label">Full Name</label>
+          <div class="control has-icons-left">
+            <input type="text" placeholder="Enter your Full Name" class="input" ng-model="$ctrl.user.full_name" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-user-o"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">E-mail</label>
+          <div class="control has-icons-left">
+            <input type="email" placeholder="your@email.com" class="input" ng-model="$ctrl.user.email" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left">
+            <input type="password" placeholder="*******" class="input" ng-model="$ctrl.user.password" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Address</label>
+          <div class="control has-icons-left">
+            <input type="text" placeholder="Enter your CEP Address" class="input" ng-model="$ctrl.user.cep_address" required>
+            <span class="icon is-small is-left">
+              <i class="fa fa-users"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <button class="button is-small is-fullwidth is-success">
+            <i class="fa fa-sign-in"></i>&nbsp;<strong>Sign Up</strong>
+          </button>
+        </div>
+        <div class="field" ng-if="$ctrl.message">
+          <div class="notification {{ $ctrl.message.type }}">
+            <span translate>{{ $ctrl.message.text }}</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+      <div class="box is-paddingless is-wrapped has-text-centered">
+        Are you user?&nbsp;<a href="#" ui-sref="guest.login">Sign In.</a>
+      </div>
+    </div>
+  </div>
+</div>
