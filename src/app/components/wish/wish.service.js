@@ -3,8 +3,9 @@ export default function WishService(Restangular) {
 
   const service = Restangular.one('wish/');
 
-  function fetch() {
-    return service.get().then(response => JSON.parse(response).result);
+  function fetch(name = '') {
+    const params = { name };
+    return service.get(params).then(response => JSON.parse(response).result);
   }
 
   function createWish(name, price, description = '') {
@@ -16,7 +17,23 @@ export default function WishService(Restangular) {
     return service.customPOST(wish).then(response => JSON.parse(response));
   }
 
+  function updateWish(id, name, price, description = '') {
+    const wish = {
+      name,
+      price,
+      description,
+    };
+    return service.one(`${id}/`).customPUT(wish).then(response => JSON.parse(response));
+  }
+
+  function removeWish(id) {
+    return service.one(`${id}/`).remove().then(response => JSON.parse(response));
+  }
+
   return {
-    fetch, createWish,
+    fetch,
+    createWish,
+    updateWish,
+    removeWish,
   };
 }

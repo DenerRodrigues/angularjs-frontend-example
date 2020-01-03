@@ -5,6 +5,7 @@ import './wish-form.scss';
 export default {
   bindings: {
     showForm: '=',
+    wishSelected: '=',
   },
   template,
   controller,

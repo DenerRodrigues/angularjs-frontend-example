@@ -1,28 +1,49 @@
 <div class="columns">
   <div class="column">
-    <div class="title">New Wish</div>
-    <form ng-submit="$ctrl.createWish()">
+    <div class="title">Wish</div>
+    <form ng-submit="$ctrl.saveWish()">
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input type="text" placeholder="Name" class="input" ng-model="$ctrl.wish.name" required>
+          <input type="text" placeholder="Name" class="input" ng-model="$ctrl.wish.name" maxlength="120" required>
         </div>
       </div>
       <div class="field">
         <label class="label">Price</label>
         <div class="control">
-          <input type="number" placeholder="Price" class="input" ng-model="$ctrl.wish.price" required>
+          <input type="number" placeholder="Price" class="input" ng-model="$ctrl.wish.price" step=".01" min=".01" required>
         </div>
       </div>
       <div class="field">
         <label class="label">Description</label>
         <div class="control">
-          <input type="text" placeholder="Description" class="input" ng-model="$ctrl.wish.description">
+          <textarea placeholder="Description" class="textarea" ng-model="$ctrl.wish.description" maxlength="250"></textarea>
+        </div>
+      </div>
+      <div class="field" ng-if="$ctrl.wishSelected">
+        <label class="label">Created At</label>
+        <div class="control">
+          <input type="text" placeholder="Modified At" class="input" value="{{ $ctrl.wish.created_at | date: 'medium' }}" disabled>
+        </div>
+      </div>
+      <div class="field" ng-if="$ctrl.wishSelected">
+        <label class="label">Modified At</label>
+        <div class="control">
+          <input type="text" placeholder="Modified At" class="input" value="{{ $ctrl.wish.modified_at | date: 'medium' }}" disabled>
         </div>
       </div>
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" type="submit">Submit</button>
+          <button class="button is-link" type="submit">
+            <i class="fa fa-plus"></i>
+            &nbsp;Submit
+          </button>
+        </div>
+        <div class="control" ng-if="$ctrl.wishSelected">
+          <button class="button is-danger" type="button" ng-click="$ctrl.removeWish()">
+            <i class="fa fa-trash"></i>
+            &nbsp;Remove
+          </button>
         </div>
         <div class="control">
           <button class="button is-light" type="button" ng-click="$ctrl.showForm=false">Cancel</button>

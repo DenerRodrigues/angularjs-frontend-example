@@ -6,10 +6,6 @@ class WishController {
 
     this.showForm = false;
   }
-
-  $onInit() {
-
-  }
 }
 
 export default WishController;

@@ -6,5 +6,5 @@
   </div>
 </div>
 
-<wish-form ng-if="$ctrl.showForm" show-form="$ctrl.showForm"></wish-form>
-<wish-list ng-if="!$ctrl.showForm"></wish-list>
+<wish-form ng-if="$ctrl.showForm" show-form="$ctrl.showForm" wish-selected="$ctrl.wishSelected"></wish-form>
+<wish-list ng-if="!$ctrl.showForm" show-form="$ctrl.showForm" wish-selected="$ctrl.wishSelected"></wish-list>

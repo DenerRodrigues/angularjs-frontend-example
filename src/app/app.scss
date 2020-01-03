@@ -27,8 +27,12 @@ body {
 
 // main area
 .main {
-  padding: 2em 1.25em 2em 0;
+  padding: 1.25em 1.25em 0.75em 0;
   color: $text;
+}
+
+.content {
+  min-height: calc(100vh - 13.75em);
 }
 
 .is-wrapped {
@@ -70,7 +74,7 @@ a {
   padding-right: 0.75em;
 }
 
-input, .textarea, .select select {
+input, textarea .textarea, .select select {
   background-color: $input;
   color: $text;
 }

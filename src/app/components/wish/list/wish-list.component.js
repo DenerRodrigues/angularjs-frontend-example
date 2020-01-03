@@ -3,7 +3,10 @@ import controller from './wish-list.controller';
 import './wish-list.scss';
 
 export default {
-  bindings: {},
+  bindings: {
+    showForm: '=',
+    wishSelected: '=',
+  },
   template,
   controller,
 };

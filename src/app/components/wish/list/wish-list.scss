@@ -1,1 +1,11 @@
 @import './../../../app.scss';
+
+
+.box.is-wish {
+  cursor: pointer;
+  color: #fff;
+  background-color: #20bc8aa6;
+  &:hover {
+    background-color: darken(#20bc8aa6, 10%);
+  }
+}
