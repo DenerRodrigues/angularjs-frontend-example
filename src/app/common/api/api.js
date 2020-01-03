@@ -30,7 +30,9 @@ export default angular.module('module.api', [
     let defer = null;
 
     Restangular.setErrorInterceptor((responseRejected, deferred, responseHandler) => {
-      if (responseRejected.status === 401 && $state.current.name !== 'guest.login') {
+      if (responseRejected.status === -1) {
+        $state.go('guest.login');
+      } else if (responseRejected.status === 401 && $state.current.name !== 'guest.login') {
         defer = $q.defer();
         // eslint-disable-next-line no-undef
         const token = localStorageToken();
