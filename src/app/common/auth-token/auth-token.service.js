@@ -1,31 +1,29 @@
-export default function AuthTokenService(Restangular) {
-  'ngInject';
+class AuthTokenService {
+  constructor(Restangular) {
+    'ngInject';
 
-  function authorization(token) {
+    this.Restangular = Restangular;
+  }
+
+  authorization(token) {
     return `Basic ${token}`;
   }
 
-  function authToken(username, password) {
+  authToken(username, password) {
     const token = Buffer.from(`${username}:${password}`).toString('base64');
-    // eslint-disable-next-line no-undef
-    localStorage.setItem('app_token', token);
-    // Restangular.setDefaultHeaders({ Authorization: authorization(token) });
-    return Restangular.one('token/').customPOST();
+    this.Restangular.setDefaultHeaders({ Authorization: this.authorization(token) });
+    return this.Restangular.one('token/').customPOST().then((response) => {
+      if (JSON.parse(response).success) {
+        // eslint-disable-next-line no-undef
+        localStorage.setItem('app_token', token);
+      }
+    });
   }
 
-  function localStorageToken() {
-    // eslint-disable-next-line no-undef
-    return localStorage.getItem('app_token');
-  }
-  function revokeToken() {
+  revokeToken() {
     // eslint-disable-next-line no-undef
     localStorage.removeItem('app_token');
   }
-
-  return {
-    authToken,
-    authorization,
-    localStorageToken,
-    revokeToken,
-  };
 }
+
+export default AuthTokenService;
