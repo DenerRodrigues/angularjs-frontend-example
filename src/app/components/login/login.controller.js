@@ -16,12 +16,19 @@ class LoginController {
   login() {
     this.LoginService.signIn(this.email, this.password).then(() => {
       this.$state.go('authenticated.dashboard');
-    }, () => {
+    }, (reject) => {
       this.AuthTokenService.revokeToken();
-      this.message = {
-        type: 'is-danger',
-        text: 'E-mail or Password Error',
-      };
+      if (reject.status === -1) {
+        this.message = {
+          type: 'is-danger',
+          text: 'The API has gonna away',
+        };
+      } else if (reject.status === 401) {
+        this.message = {
+          type: 'is-danger',
+          text: 'E-mail or Password Error',
+        };
+      }
     });
   }
 }
