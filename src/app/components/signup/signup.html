@@ -11,7 +11,7 @@
         <div class="field">
           <label class="label">Full Name</label>
           <div class="control has-icons-left">
-            <input type="text" placeholder="Enter your Full Name" class="input" ng-model="$ctrl.user.full_name" autocomplete="off" required>
+            <input type="text" name="full_name" placeholder="Enter your Full Name" class="input" ng-model="$ctrl.user.full_name" autocomplete="off" required>
             <span class="icon is-small is-left">
               <i class="fa fa-user-o"></i>
             </span>
@@ -20,7 +20,7 @@
         <div class="field">
           <label class="label">E-mail</label>
           <div class="control has-icons-left">
-            <input type="email" placeholder="your@email.com" class="input" ng-model="$ctrl.user.email" autocomplete="off" required>
+            <input type="email" name="email" placeholder="your@email.com" class="input" ng-model="$ctrl.user.email" autocomplete="off" required>
             <span class="icon is-small is-left">
               <i class="fa fa-envelope"></i>
             </span>
@@ -29,7 +29,7 @@
         <div class="field">
           <label class="label">Password</label>
           <div class="control has-icons-left">
-            <input type="password" placeholder="*******" class="input" ng-model="$ctrl.user.password" autocomplete="off" required>
+            <input type="password" name="password" placeholder="*******" class="input" ng-model="$ctrl.user.password" autocomplete="off" required>
             <span class="icon is-small is-left">
               <i class="fa fa-lock"></i>
             </span>
@@ -38,7 +38,7 @@
         <div class="field">
           <label class="label">Address</label>
           <div class="control has-icons-left">
-            <input type="text" placeholder="Enter your CEP Address" class="input" ng-model="$ctrl.user.cep_address" required>
+            <input type="text" name="cep" placeholder="Enter your CEP Address" class="input" ng-model="$ctrl.user.cep_address" required>
             <span class="icon is-small is-left">
               <i class="fa fa-users"></i>
             </span>
