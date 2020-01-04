@@ -1,11 +1,12 @@
 class NavbarController {
-  constructor($state, AuthTokenService) {
+  constructor($state, AuthTokenService, envService) {
     'ngInject';
 
     this.name = 'navbar';
 
     this.$state = $state;
     this.AuthTokenService = AuthTokenService;
+    this.apiUrl = envService.read('apiUrl');
   }
 
   logout() {
