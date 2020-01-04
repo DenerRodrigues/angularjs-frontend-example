@@ -1,10 +1,9 @@
 class SignupController {
-  constructor($state, SignUpService) {
+  constructor(SignUpService) {
     'ngInject';
 
     this.name = 'login';
 
-    this.$state = $state;
     this.SignUpService = SignUpService;
     this.user = {
       name: '',
@@ -21,10 +20,17 @@ class SignupController {
         text: 'User successfully registered',
       };
     }, (reject) => {
-      this.message = {
-        type: 'is-danger',
-        text: JSON.parse(reject.data).result,
-      };
+      if (reject.data) {
+        this.message = {
+          type: 'is-danger',
+          text: JSON.parse(reject.data).result,
+        };
+      } else {
+        this.message = {
+          type: 'is-danger',
+          text: reject,
+        };
+      }
     });
   }
 }
