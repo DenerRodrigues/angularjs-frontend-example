@@ -2,9 +2,9 @@
 
 .aside {
   min-height: calc(100vh - 9em);
-
   background-color: $sidebar-background;
   padding: 2em .2em 0 1em;
+  margin-right: -1.45em;
 
   .menu-label {
     color: $menu-title;
