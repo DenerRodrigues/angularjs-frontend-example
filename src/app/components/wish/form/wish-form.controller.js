@@ -28,7 +28,7 @@ class WishFormController {
     }, (reject) => {
       this.message = {
         type: 'is-danger',
-        text: JSON.parse(reject.data).result,
+        text: reject.data.result,
       };
     });
   }
@@ -39,7 +39,7 @@ class WishFormController {
     }, (reject) => {
       this.message = {
         type: 'is-danger',
-        text: JSON.parse(reject.data).result,
+        text: reject.data.result,
       };
     });
   }
@@ -51,7 +51,7 @@ class WishFormController {
       if (reject.data) {
         this.message = {
           type: 'is-danger',
-          text: JSON.parse(reject.data).result,
+          text: reject.data.result,
         };
       } else {
         this.showForm = false;

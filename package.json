@@ -26,6 +26,7 @@
     "@uirouter/angularjs": "^1.0.0",
     "angular": "^1.6.0",
     "angular-environment": "^1.0.8",
+    "angular-input-masks": "^4.4.1",
     "angular-sanitize": "^1.7.2",
     "angular-translate": "^2.18.1",
     "angular-translate-storage-cookie": "^2.18.1",

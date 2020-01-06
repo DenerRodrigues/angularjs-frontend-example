@@ -17,11 +17,8 @@
       <div class="field is-size-5 has-text-centered">
         {{ wish.name }}
       </div>
-<!--      <div class="field is-size-6">-->
-<!--        {{ wish.description }}-->
-<!--      </div>-->
       <div class="field is-size-4 has-text-centered has-text-weight-bold">
-        $ {{ wish.price }}
+        {{ wish.price | currency:"$ " }}
       </div>
     </div>
   </div>

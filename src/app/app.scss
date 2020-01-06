@@ -76,5 +76,5 @@ a {
 
 input, textarea .textarea, .select select {
   background-color: $input;
-  color: $text;
+  color: $text !important;
 }

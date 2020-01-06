@@ -11,7 +11,7 @@
       <div class="field">
         <label class="label">Price</label>
         <div class="control">
-          <input type="number" placeholder="Price" class="input" ng-model="$ctrl.wish.price" step=".01" min=".01" required>
+          <input type="text" placeholder="Price" class="input" ng-model="$ctrl.wish.price" min="0.1" ui-money-mask required>
         </div>
       </div>
       <div class="field">
