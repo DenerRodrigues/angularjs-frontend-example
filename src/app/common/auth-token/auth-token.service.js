@@ -13,9 +13,10 @@ class AuthTokenService {
     const token = Buffer.from(`${username}:${password}`).toString('base64');
     this.Restangular.setDefaultHeaders({ Authorization: this.authorization(token) });
     return this.Restangular.one('token/').customPOST().then((response) => {
-      if (JSON.parse(response).success) {
+      if (response.success) {
+        this.Restangular.setDefaultHeaders({ Authorization: response.result.token });
         // eslint-disable-next-line no-undef
-        localStorage.setItem('app_token', token);
+        localStorage.setItem('app_token', response.result.token);
       }
     });
   }
