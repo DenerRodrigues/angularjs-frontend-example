@@ -1,10 +1,11 @@
 class ProfileController {
-  constructor($state, UserService) {
+  constructor(UserService) {
     'ngInject';
 
     this.name = 'profile';
 
     this.UserService = UserService;
+    this.showChangePasswordForm = false;
   }
 
   $onInit() {
@@ -23,7 +24,7 @@ class ProfileController {
     }, (reject) => {
       this.message = {
         type: 'is-danger',
-        text: JSON.parse(reject.data).result,
+        text: reject.data.result,
       };
     });
   }

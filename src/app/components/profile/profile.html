@@ -24,7 +24,9 @@
 </div>
 
 <div class="content box is-paddingless">
-  <div class="columns">
+  <change-password show-change-password-form="$ctrl.showChangePasswordForm" ng-if="$ctrl.showChangePasswordForm"></change-password>
+  <inactive-account show-inactive-account-form="$ctrl.showInactiveAccountForm" ng-if="$ctrl.showInactiveAccountForm"></inactive-account>
+  <div class="columns" ng-if="!$ctrl.showChangePasswordForm && !$ctrl.showInactiveAccountForm">
     <div class="column">
       <form ng-submit="$ctrl.saveProfile()">
         <div class="field">
@@ -42,7 +44,7 @@
         <div class="field">
           <label class="label">Address</label>
           <div class="control">
-            <input type="text" name="cep" placeholder="Enter your CEP Address" class="input" ng-model="$ctrl.user.cep_address" required>
+            <input type="text" name="cep" placeholder="Enter your CEP Address" class="input" ng-model="$ctrl.user.cep_address" ui-br-cep-mask required>
           </div>
         </div>
         <div class="field">
@@ -56,13 +58,13 @@
             </button>
           </div>
           <div class="control">
-            <button class="button is-small is-danger" type="button" ng-click="$ctrl.inactiveUser()">
+            <button class="button is-small is-danger" type="button" ng-click="$ctrl.showInactiveAccountForm=true">
               <i class="fa fa-trash"></i>
               &nbsp;Inactive Account
             </button>
           </div>
           <div class="control">
-            <button class="button is-small is-light" type="button" ng-click="$ctrl.changePassword()">
+            <button class="button is-small is-light" type="button" ng-click="$ctrl.showChangePasswordForm=true">
               <i class="fa fa-lock"></i>
               &nbsp;Change Password
             </button>

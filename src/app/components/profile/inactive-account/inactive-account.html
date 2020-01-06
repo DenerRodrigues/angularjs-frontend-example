@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column">
+    <div class="title">Inactive Account</div>
+    <form ng-submit="$ctrl.inactiveAccount()">
+      <div class="field">
+        When you inactivate your account, you will be logged out and unable to log in again.
+        <br>
+        Are you sure you want to inactivate your account?
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-small is-danger" type="submit">
+            <i class="fa fa-trash"></i>
+            &nbsp;Inactive Account
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-small is-light" type="button" ng-click="$ctrl.showInactiveAccountForm=false">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="field" ng-if="$ctrl.message">
+        <div class="notification {{ $ctrl.message.type }}">
+          <span translate>{{ $ctrl.message.text }}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

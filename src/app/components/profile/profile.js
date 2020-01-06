@@ -3,8 +3,14 @@ import uiRouter from '@uirouter/angularjs';
 
 import profileComponent from './profile.component';
 
+import changePassword from './change-password/change-password';
+import inactiveAccount from './inactive-account/inactive-account';
+
 const profileModule = angular.module('profile', [
   uiRouter,
+
+  changePassword,
+  inactiveAccount,
 ])
   .config(($stateProvider) => {
     'ngInject';
