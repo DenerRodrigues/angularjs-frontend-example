@@ -5,16 +5,12 @@ class AuthTokenService {
     this.Restangular = Restangular;
   }
 
-  authorization(token) {
-    return `Basic ${token}`;
-  }
-
   authToken(username, password) {
     const token = Buffer.from(`${username}:${password}`).toString('base64');
-    this.Restangular.setDefaultHeaders({ Authorization: this.authorization(token) });
+    this.Restangular.setDefaultHeaders({ Authorization: `Basic ${token}` });
     return this.Restangular.one('token/').customPOST().then((response) => {
       if (response.success) {
-        this.Restangular.setDefaultHeaders({ Authorization: response.result.token });
+        this.Restangular.setDefaultHeaders({ Authorization: `Bearer ${response.result.token}` });
         // eslint-disable-next-line no-undef
         localStorage.setItem('app_token', response.result.token);
       }

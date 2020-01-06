@@ -2,6 +2,11 @@ import angular from 'angular';
 import restangular from 'restangular';
 import Environment from './../environment';
 
+function localStorageToken() {
+  // eslint-disable-next-line no-undef
+  return localStorage.getItem('app_token');
+}
+
 export default angular.module('module.api', [
   restangular,
   Environment,
@@ -9,8 +14,7 @@ export default angular.module('module.api', [
   .config((RestangularProvider, envServiceProvider) => {
     'ngInject';
 
-    // eslint-disable-next-line no-undef
-    const authorization = `Basic ${localStorage.getItem('app_token')}`;
+    const authorization = `Bearer ${localStorageToken()}`;
     RestangularProvider.setDefaultHeaders({ Authorization: authorization });
     RestangularProvider.setBaseUrl(envServiceProvider.read('apiUrl'));
     RestangularProvider.setRequestInterceptor((elem, operation) => {
@@ -28,6 +32,7 @@ export default angular.module('module.api', [
         ($state.current.name !== 'guest.login' && $state.current.name !== 'guest.signup')) {
         $state.go('guest.login');
       }
+      return false;
     });
   })
   .name;
