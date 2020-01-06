@@ -17,7 +17,7 @@ class UserService {
 
   getMe() {
     return this.service.get().then((response) => {
-      this.user = JSON.parse(response).result;
+      this.user = response.result;
       this.setAddress();
       return this.user;
     });
@@ -29,11 +29,23 @@ class UserService {
       email,
       cep_address,
     };
-    return this.service.put(user).then((response) => {
-      this.user = JSON.parse(response).result;
+    return this.service.customPUT(user).then((response) => {
+      this.user = response.result;
       this.setAddress();
       return this.user;
     });
+  }
+
+  changePassword(old_password, new_password) {
+    const data = {
+      old_password,
+      new_password,
+    };
+    return this.service.one('change_password/').customPUT(data);
+  }
+
+  inactiveAccount() {
+    return this.service.remove();
   }
 }
 
