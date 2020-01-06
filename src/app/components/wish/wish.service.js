@@ -5,7 +5,7 @@ export default function WishService(Restangular) {
 
   function fetch(name = '') {
     const params = { name };
-    return service.get(params).then(response => JSON.parse(response).result);
+    return service.get(params).then(response => response.result);
   }
 
   function createWish(name, price, description = '') {
@@ -14,7 +14,7 @@ export default function WishService(Restangular) {
       price,
       description,
     };
-    return service.customPOST(wish).then(response => JSON.parse(response));
+    return service.customPOST(wish).then(response => response);
   }
 
   function updateWish(id, name, price, description = '') {
@@ -23,11 +23,11 @@ export default function WishService(Restangular) {
       price,
       description,
     };
-    return service.one(`${id}/`).customPUT(wish).then(response => JSON.parse(response));
+    return service.one(`${id}/`).customPUT(wish).then(response => response);
   }
 
   function removeWish(id) {
-    return service.one(`${id}/`).remove().then(response => JSON.parse(response));
+    return service.one(`${id}/`).remove().then(response => response);
   }
 
   return {

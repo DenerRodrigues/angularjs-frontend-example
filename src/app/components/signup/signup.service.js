@@ -9,7 +9,7 @@ export default function SignUpService(Restangular) {
       cep_address,
     };
     return Restangular.one('signup/').customPOST(user).then((response) => {
-      this.user = JSON.parse(response).result;
+      this.user = response.result;
       return this.user;
     });
   }
